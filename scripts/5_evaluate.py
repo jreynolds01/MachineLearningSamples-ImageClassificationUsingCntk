@@ -63,7 +63,7 @@ fig.savefig('outputs/rocCurve_confMat.jpg', bbox_inches='tight', dpi = 200)
 globalAcc, classAccs = cmPrintAccuracies(confMatrix, classes, gtLabels)
 if amlLogger != []:
     amlLogger.log("clasifier", classifier)
-    amlLogger.log("Global accuracy", 100 * globalAcc)
+    amlLogger.log("Global accuracy", globalAcc)
     amlLogger.log("Class-average accuracy", 100 * np.mean(classAccs))
     for className, acc in zip(classes,classAccs):
         amlLogger.log("Accuracy of class %s" % className, 100 * np.mean(classAccs))
